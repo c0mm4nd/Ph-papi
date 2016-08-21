@@ -9,8 +9,8 @@ namespace app\ctrl;
 
 class indexCtrl{
     public function index(){
-        P("OK");
+        print \core\lib\conf::get('CTRL','route');
         $model = new \core\lib\model();
-        
+
     }
 }

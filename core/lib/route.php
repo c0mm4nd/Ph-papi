@@ -6,6 +6,7 @@
  * Time: 14:45
  */
 namespace core\lib;
+use \core\lib\conf;
 class route{
     public $ctrl;
     public $action;
@@ -16,7 +17,7 @@ class route{
             $count = count($pathArr);
             if (isset($pathArr[0])){ $this->ctrl = $pathArr[0];}else{ $this->ctrl  = 'index';}
             unset($pathArr[0]);
-            if (isset($pathArr[1])){ $this->action = $pathArr[1];}else{$this->action  = 'index';}
+            if (isset($pathArr[1])){ $this->action = $pathArr[1];}else{$this->action  = conf::get('CTRL', 'route');}
             unset($pathArr[1]);
             // 多余部分URL处理
             $i=2;

@@ -25,6 +25,7 @@ class core {
             throw new \Exception("Ctrl".$ctrlClass."Not found");
         }
     }
+    
     static public function load($class){
         // 自动加载类库
         if (isset($classMap[$class])) {
