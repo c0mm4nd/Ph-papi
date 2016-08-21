@@ -12,22 +12,29 @@ class core {
 
     static public function run(){
         $route = new \core\lib\route();
-        P($route);
+        $ctrlClass = $route->ctrl;
+        $action = $route->action;
+        $ctrlClass = MODULE.'/ctrl/'.$ctrlClass.'Ctrl';
+        $ctrlClassFile = $ctrlClass.'.php';
+        $ctrlClassNS = fileToNS($ctrlClassFile);
+        if (is_file($ctrlClassFile)){
+            include $ctrlClassFile;
+            $ctrl = new $ctrlClassNS;
+            $ctrl->$action();
+        }else{
+            throw new \Exception("Ctrl".$ctrlClass."Not found");
+        }
     }
     static public function load($class){
         // 自动加载类库
         if (isset($classMap[$class])) {
             return true;
         }else{
-            //  $class = str_replace('\\', '/', $class);
-            //  P($class);
             $file = $class.".php";
-            // print $file;
-            if (is_file($file)) {
+            if (is_file($file)){
                 include $file;
                 self::$classMap[$class] = $class;
             }else{
-                // print "???";
                 return false;
             }
         }

@@ -12,22 +12,20 @@ class route{
     public function __construct(){
         if (isset($_SERVER['REQUEST_URI']) && $_SERVER['REQUEST_URI'] != '/'){
             $path = $_SERVER['REQUEST_URI'];
-            $path_arr = explode('/', trim($path, '/'));
-            P($path_arr);
-            if (isset($path_arr[0])){ $this->ctrl = $path_arr[0];}else{ $this->ctrl  = 'index';}
-            unset($path_arr[0]);
-            if (isset($path_arr[1])){ $this->action = $path_arr[1];}else{$this->action  = 'index';}
-            unset($path_arr[1]);
+            $pathArr = explode('/', trim($path, '/'));
+            $count = count($pathArr);
+            if (isset($pathArr[0])){ $this->ctrl = $pathArr[0];}else{ $this->ctrl  = 'index';}
+            unset($pathArr[0]);
+            if (isset($pathArr[1])){ $this->action = $pathArr[1];}else{$this->action  = 'index';}
+            unset($pathArr[1]);
             // 多余部分URL处理
-            $count = count($path_arr);
             $i=2;
-            while ($i < $count){
-                if (isset($path_arr[$i+1])){
-                    $_GET[$path_arr[$i]] = $path_arr[$i+1];
+            while($i < $count){
+                if (isset($pathArr[$i+1])){
+                    $_GET[$pathArr[$i]] = $pathArr[$i+1];
                 }
                 $i = $i+2;
             }
-            P($_GET);
         }else{
             $this->ctrl = 'index';
             $this->action  = 'index';

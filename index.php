@@ -7,7 +7,9 @@
  */
 define("ROOT", realpath(' /'));
 define('CORE', ROOT.'/core');
-define('APP', ROOT.'/app');
+
+define('MODULE', 'app');
+define('APP', ROOT.'/'.MODULE);
 
 define('DEBUG', true);
 
@@ -18,9 +20,7 @@ if (DEBUG) {
 }
 
 include CORE.'/common/function.php';
-
 include CORE.'/Ph-papi.php';
-
 spl_autoload_register("\core\core::load");
 
 \core\core::run();
