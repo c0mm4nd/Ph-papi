@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Command
- * Date: 2016/8/21
- * Time: 19:51
- */
 namespace core\lib;
 
 class conf {
@@ -16,7 +10,7 @@ class conf {
         if(isset(self::$conf[$confFile])){
             return self::$conf[$confFile][$confItemName];
         }else{
-            $path = "core/config/".$confFile.".php";
+            $path = CORE."/config/".$confFile.".php";
             if (is_file($path)){
                 $conf = include $path;
                 if (isset($conf[$confItemName])){
@@ -34,7 +28,7 @@ class conf {
         if(isset(self::$conf[$confFile])){
             return self::$conf[$confFile][$confItemName];
         }else{
-            $path = "core/config/".$confFile.".php";
+            $path = CORE."/config/".$confFile.".php";
             if (is_file($path)){
                 $conf = include $path;
                 self::$conf[$confFile] = $conf;

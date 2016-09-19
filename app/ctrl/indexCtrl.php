@@ -1,16 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Command
- * Date: 2016/8/21
- * Time: 16:38
- */
 namespace app\ctrl;
 
-class indexCtrl{
+class indexCtrl extends \core\core
+{
     public function index(){
-        print \core\lib\conf::get('CTRL','route');
-        $model = new \core\lib\model();
-
+        // print \core\lib\conf::get('CTRL','route');
+        // $model = new $this->model();
+        // var_dump($model);
+        \core\lib\view::assign('data','data');
+        \core\lib\view::display('index.html');
     }
 }

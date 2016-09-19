@@ -1,0 +1,5 @@
+$ vendor/bin/phinx init .
+$ $EDITOR phinx.yml
+$ mkdir -p db/migrations db/seeds
+$ vendor/bin/phinx create MyFirstMigration
+$ vendor/bin/phinx migrate -e development

@@ -1,0 +1,14 @@
+{
+	"name" : "maoxs2/Ph-papi",
+	"desciption" : "light PHP framework for API",
+	"type" : "framework",
+	"keywords" : ["PHP", "API", "light", "framework"],
+	"require" : {
+		"php" : ">=5.3.0",
+		"catfan/medoo" : "*",
+		"ext-pdo": "*",
+		"filp/whoops" : "*",
+		"twig/twig" : "*",
+		"robmorgan/phinx" : "*"
+	}
+}

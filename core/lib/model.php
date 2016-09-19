@@ -8,19 +8,20 @@
 namespace core\lib;
 use core\lib\conf;
 
-class model extends \PDO {
+class model extends \medoo {
     public function __construct()
     {   
-        $dbinfo = conf::all('database');
-
-        $dsn = $dbinfo['DSN'];
-        $username = $dbinfo['USERNAME'];
-        $passwd = $dbinfo['PASSWORD'];
-        try{
-            parent::__construct($dsn, $username, $passwd);
-        }catch (\PDOException $e){
-            P($e->getMessage());
-        }
+        $dbConf = conf::all('database');
+        $db = parent::__construct($dbConf);
+        // $dsn = $dbinfo['DSN'];
+        // $username = $dbinfo['USERNAME'];
+        // $passwd = $dbinfo['PASSWORD'];
+        // try{
+        //     parent::__construct($dsn, $username, $passwd);
+        // }catch (\PDOException $e){
+        //     P($e->getMessage());
+        // }
+        return $db;
 
     }
 }
