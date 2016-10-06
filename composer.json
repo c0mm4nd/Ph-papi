@@ -8,7 +8,6 @@
 		"catfan/medoo" : "*",
 		"ext-pdo": "*",
 		"filp/whoops" : "*",
-		"twig/twig" : "*",
-		"robmorgan/phinx" : "*"
+		"twig/twig" : "*"
 	}
 }

@@ -7,10 +7,4 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Whoops\\' => array($vendorDir . '/filp/whoops/src/Whoops'),
-    'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
-    'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
-    'Symfony\\Component\\Filesystem\\' => array($vendorDir . '/symfony/filesystem'),
-    'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
-    'Symfony\\Component\\Config\\' => array($vendorDir . '/symfony/config'),
-    'Phinx\\' => array($vendorDir . '/robmorgan/phinx/src/Phinx'),
 );
