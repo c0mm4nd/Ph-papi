@@ -15,10 +15,20 @@ function P($var) {
     }
 }
 
-function fileToNS($string){
-    // file to NS
-    $string = str_replace('.php', '', $string);
-    $string = str_replace('/', '\\', $string);
-    $string = "\\".$string;
+// function fileToNS($string){
+//     // file to NS
+//     $string = str_replace('.php', '', $string);
+//     $string = str_replace('/', '\\', $string);
+//     $string = "\\".$string;
+//     return $string;
+// }
+
+
+function formatPath($string){
+    // NS to file 
+    // $string = str_replace('.php', '', $string);
+    $string = str_replace('\\', DIRECTORY_SEPARATOR, $string);
+    $string = str_replace('/', DIRECTORY_SEPARATOR, $string);
+    // $string = "/".$string;
     return $string;
 }

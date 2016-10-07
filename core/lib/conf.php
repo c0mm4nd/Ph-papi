@@ -10,7 +10,7 @@ class conf {
         if(isset(self::$conf[$confFile])){
             return self::$conf[$confFile][$confItemName];
         }else{
-            $path = CORE."/config/".$confFile.".php";
+            $path = CORE.formatPath("/config/".$confFile.".php");
             if (is_file($path)){
                 $conf = include $path;
                 if (isset($conf[$confItemName])){
@@ -28,7 +28,7 @@ class conf {
         if(isset(self::$conf[$confFile])){
             return self::$conf[$confFile][$confItemName];
         }else{
-            $path = CORE."/config/".$confFile.".php";
+            $path = CORE.formatPath("/config/".$confFile.".php");
             if (is_file($path)){
                 $conf = include $path;
                 self::$conf[$confFile] = $conf;

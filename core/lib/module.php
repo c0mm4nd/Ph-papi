@@ -15,14 +15,14 @@ class module{
 	}
 
     static public function initModuleRoute($moduleName){
-    	if (@file_exists(CORE.'/module/'.$moduleName.'/route.php')){
-        	include_once(CORE.'/module/'.$moduleName.'/route.php'); 
+    	if (@file_exists(CORE.formatPath('/module/'.$moduleName.'/route.php'))){
+        	include_once(CORE.formatPath('/module/'.$moduleName.'/route.php')); 
         }
     }
 
     static public function initModuleModel($moduleName){
-    	if (@file_exists(CORE.'/module/'.$moduleName.'/model.php')){
-        	include_once(CORE.'/module/'.$moduleName.'/model.php'); 
+    	if (@file_exists(CORE.formatPath('/module/'.$moduleName.'/model.php'))){
+        	include_once(CORE.formatPath('/module/'.$moduleName.'/model.php')); 
         }
     }
 }

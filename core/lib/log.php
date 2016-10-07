@@ -12,12 +12,12 @@ class log {
     }
 
     static public function log($message, $logFile = 'log.txt'){
-    	$logPath = 'core/log/';
+    	$logPath = CORE.formatPath('/log/');
     	if ( !is_dir($logPath)){
     		mkdir($logPath, '0777', true);
     		P('mkdir S!');
     	}
-    	$message = "[" . date('H:i:s @ Y-m-d') . "]: " . $message . "\n";
+    	$message = "[" . date('H:i:s @ Y-m-d') . "]: " . $message . "\r\n";
     	file_put_contents($logPath.$logFile, $message,  FILE_APPEND | LOCK_EX);
     }
 }
