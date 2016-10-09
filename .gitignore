@@ -1,3 +1,6 @@
 vender/*
 .idea
 .vscode
+core/log/*
+app/cache/*
+composer.lock
